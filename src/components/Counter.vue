@@ -1,11 +1,19 @@
 <template>
     <h2>Counter</h2>
-    <p>10</p>
+    <p>{{ counter }}</p>
+    <div>
+        {{ counter }}
+    </div>
 </template>
 
 <script>
 export default {
-    name: 'Wawitash'
+    name: 'Wawitash',
+    data() {
+        return {
+            counter: 5
+        }
+    },
 }
 </script>
 
