@@ -13,6 +13,9 @@
     <div>
         {{ counter }} <sup>2</sup> = {{ squareValue }}
     </div>
+    <hr>
+    <button @click="increase">Increase</button>
+    <button @click="decrease">Decrease</button>
 </template>
 
 <script>
@@ -25,15 +28,19 @@ export default {
     },
     computed: {
         squareValue() {
-            console.log('squareValue')
             return this.counter ** 2
         }
     },
     methods: {
         getSquareValue() {
-            console.log('getSquareValue')
             return this.counter ** 2
-        }
+        },
+        increase() {
+            this.counter++
+        },
+        decrease() {
+            this.counter--
+        },
     },
 }
 </script>
