@@ -1,9 +1,9 @@
 <template>
-    <h2>Counter</h2>
+    <h2>{{ customTitle }}</h2>
     <div>
         {{ counter }} <sup>2</sup> = {{ squareValue }}
     </div>
-    <div class="buttons-container">
+    <div class="buttons-container"> 
         <button @click="increase">Increase</button>
         <button @click="decrease">Decrease</button>
     </div>
@@ -12,15 +12,30 @@
 <script>
 export default {
     // name: 'Wawitash',
+    props: {
+        title: {
+            type: String,
+            start: {
+                type: Number,
+                default: 100,
+                validator( value ) {
+                    return value >= 0
+                }
+            }
+        },
+    },
     data() {
         return {
             counter: 5
         }
     },
     computed: {
+        customTitle() {
+            return this.title || 'Counter'
+        },
         squareValue() {
             return this.counter ** 2
-        }
+        },
     },
     methods: {
         getSquareValue() {
