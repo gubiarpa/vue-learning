@@ -14,9 +14,18 @@ describe('Counter Component', () => {
 
         const wrapper = shallowMount(Counter)
 
-        // expect(wrapper.find('h2').exists()).toBeTruthy()
+        expect(wrapper.find('h2').exists()).toBeTruthy()
         expect(wrapper.find('h2').text()).toBe('Counter')
 
+    })
+
+    test('p default value should be 100', () => {
+        
+        const wrapper = shallowMount(Counter)
+        
+        const value = wrapper.find('[data-testid="counter"]').text()
+
+        expect(value).toBe('5')
     })
 
 })

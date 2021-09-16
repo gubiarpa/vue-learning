@@ -1,7 +1,12 @@
 <template>
     <h2>{{ customTitle }}</h2>
     <div>
-        {{ counter }} <sup>2</sup> = {{ squareValue }}
+        <p data-testid="counter">
+            {{ counter }}
+        </p>
+        <p>
+            {{ counter }} <sup>2</sup> = {{ squareValue }}
+        </p>
     </div>
     <div class="buttons-container"> 
         <button @click="increase">Increase</button>
